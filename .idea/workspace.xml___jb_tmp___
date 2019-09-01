@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2921622-a292-46e9-bf27-03af8d59cda3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jnx/com/aayu/jnx/JNXRuntime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jnx/com/aayu/jnx/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jnx/com/aayu/jnx/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jnx/com/aayu/jnx/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jnx/com/aayu/jnx/Scanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aayu/jnx/JNXRuntime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aayu/jnx/Jnx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aayu/jnx/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aayu/jnx/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aayu/jnx/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aayu/jnx/Scanner.java" afterDir="false" />
@@ -21,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/aayu/jnx/Jnx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="82" column="60" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+            <state relative-caret-position="190">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1990#1991#0" expanded="true" />
@@ -104,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/aayu/jnx/Expr.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#435#436#0" expanded="true" />
                 <element signature="e#480#481#0" expanded="true" />
@@ -344,7 +348,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20897156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -355,7 +358,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11925602" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31838074" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,7 +442,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/aayu/jnx/Expr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#435#436#0" expanded="true" />
             <element signature="e#480#481#0" expanded="true" />
@@ -492,8 +495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/aayu/jnx/Jnx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="82" column="60" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+        <state relative-caret-position="190">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1990#1991#0" expanded="true" />

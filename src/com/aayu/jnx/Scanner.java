@@ -101,7 +101,7 @@ class Scanner {
                 } else if (isAlpha(c)) {
                     identifier();
                 } else {
-                    JNXRuntime.error(line, "Unexpected character.");
+                    Jnx.error(line, "Unexpected character.");
                 }
                 break;
         }
@@ -141,7 +141,7 @@ class Scanner {
 
         // Unterminated string
         if (isAtEnd()) {
-            JNXRuntime.error(line, "Unterminated string.");
+            Jnx.error(line, "Unterminated string.");
             return;
         }
 

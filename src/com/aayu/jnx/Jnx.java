@@ -11,27 +11,27 @@ import java.util.List;
 import static com.aayu.jnx.Constants.FLAG_RUN_PROMPT;
 import static com.aayu.jnx.Constants.FLAG_RUN_FILE;
 
-public class JNXRuntime {
+public class Jnx {
 
     private static String inFile;
     private static int flag;
 
     static boolean hadError = false;
 
-    private static JNXRuntime instance;
+    private static Jnx instance;
 
-    private JNXRuntime() {
+    private Jnx() {
         flag = FLAG_RUN_PROMPT;
     }
 
-    private JNXRuntime(String _inFile) {
+    private Jnx(String _inFile) {
         inFile = _inFile;
         flag = FLAG_RUN_FILE;
     }
 
-    public static JNXRuntime GetInstance() {
+    public static Jnx GetInstance() {
         if (instance == null) {
-            instance = new JNXRuntime();
+            instance = new Jnx();
         }
 
         return instance;
@@ -74,10 +74,13 @@ public class JNXRuntime {
     private static void run(String source) {
         Scanner scanner = new Scanner(source);
         List<Token> tokens = scanner.scanTokens();
+        Parser parser = new Parser(tokens);
+        Expr expression = parser.parse();
 
-        for (Token token : tokens) {
-            System.out.println(token);
-        }
+        // Stop if syntax error.
+        if (hadError) return;
+
+        System.out.println(new AstPrinter().print(expression));
     }
 
     static void error(int line, String message) {
@@ -88,5 +91,13 @@ public class JNXRuntime {
         System.err.println(
                 "[line " + line + "] Error" + where + ": " + message);
         hadError = true;
+    }
+
+    static void error(Token token, String message) {
+        if (token.type == TokenType.EOF) {
+            report(token.line, " at end", message);
+        } else {
+            report(token.line, " at '" + token.lexeme + "'", message);
+        }
     }
 }

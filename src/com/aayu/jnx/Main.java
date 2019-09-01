@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        JNXRuntime runtime = JNXRuntime.GetInstance();
+        Jnx runtime = Jnx.GetInstance();
         if (args.length > 1) {
             System.out.println("Usage: jnx [script]");
             System.exit(64);
