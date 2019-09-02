@@ -11,12 +11,15 @@ import java.util.List;
 import static com.aayu.jnx.Constants.FLAG_RUN_PROMPT;
 import static com.aayu.jnx.Constants.FLAG_RUN_FILE;
 
-public class Jnx {
+class Jnx {
 
     private static String inFile;
     private static int flag;
 
-    static boolean hadError = false;
+    private static final Interpreter interpreter = new Interpreter();
+
+    private static boolean hadError = false;
+    private static boolean hadRuntimeError = false;
 
     private static Jnx instance;
 
@@ -29,7 +32,7 @@ public class Jnx {
         flag = FLAG_RUN_FILE;
     }
 
-    public static Jnx GetInstance() {
+    static Jnx GetInstance() {
         if (instance == null) {
             instance = new Jnx();
         }
@@ -38,12 +41,12 @@ public class Jnx {
     }
 
 
-    public void SetFilePath(String _inFile) {
+    void SetFilePath(String _inFile) {
         inFile = _inFile;
         flag = FLAG_RUN_FILE;
     }
 
-    public void init() throws IOException {
+    void init() throws IOException {
         if (flag == FLAG_RUN_PROMPT || inFile.length() == 0) {
             runPrompt();
         } else {
@@ -55,9 +58,9 @@ public class Jnx {
         byte[] bytes = Files.readAllBytes(Paths.get(inFile));
         run(new String(bytes, Charset.defaultCharset()));
 
-        if (hadError) {
-            System.exit(65);
-        }
+        if (hadError) System.exit(65);
+        if (hadRuntimeError) System.exit(70);
+
     }
 
     private static void runPrompt() throws IOException {
@@ -80,7 +83,8 @@ public class Jnx {
         // Stop if syntax error.
         if (hadError) return;
 
-        System.out.println(new AstPrinter().print(expression));
+        // System.out.println(new AstPrinter().print(expression));
+        interpreter.interpret(expression);
     }
 
     static void error(int line, String message) {
@@ -99,5 +103,11 @@ public class Jnx {
         } else {
             report(token.line, " at '" + token.lexeme + "'", message);
         }
+    }
+
+    static void runtimeError(RuntimeError error) {
+        System.err.println(error.getMessage() +
+                "\n[line " + error.token.line + "]");
+        hadRuntimeError = true;
     }
 }
